@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestRig));
             this.btnDAQ = new MetroFramework.Controls.MetroButton();
             this.btnIR = new MetroFramework.Controls.MetroButton();
             this.btnWebCam_Capture = new MetroFramework.Controls.MetroButton();
@@ -38,94 +39,67 @@
             // 
             // btnDAQ
             // 
-            this.btnDAQ.AutoSize = true;
+            resources.ApplyResources(this.btnDAQ, "btnDAQ");
             this.btnDAQ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDAQ.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnDAQ.Location = new System.Drawing.Point(23, 143);
             this.btnDAQ.Name = "btnDAQ";
-            this.btnDAQ.Size = new System.Drawing.Size(217, 60);
-            this.btnDAQ.TabIndex = 0;
-            this.btnDAQ.Text = "D.A.Q TEST";
             this.btnDAQ.UseSelectable = true;
             this.btnDAQ.Click += new System.EventHandler(this.btnDAQ_Click);
             // 
             // btnIR
             // 
-            this.btnIR.AutoSize = true;
+            resources.ApplyResources(this.btnIR, "btnIR");
             this.btnIR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIR.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnIR.Location = new System.Drawing.Point(301, 143);
             this.btnIR.Name = "btnIR";
-            this.btnIR.Size = new System.Drawing.Size(217, 60);
-            this.btnIR.TabIndex = 1;
-            this.btnIR.Text = "IRRADIANCE TEST";
             this.btnIR.UseSelectable = true;
             this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
             // btnWebCam_Capture
             // 
-            this.btnWebCam_Capture.AutoSize = true;
+            resources.ApplyResources(this.btnWebCam_Capture, "btnWebCam_Capture");
             this.btnWebCam_Capture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWebCam_Capture.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnWebCam_Capture.Location = new System.Drawing.Point(23, 276);
             this.btnWebCam_Capture.Name = "btnWebCam_Capture";
-            this.btnWebCam_Capture.Size = new System.Drawing.Size(217, 60);
-            this.btnWebCam_Capture.TabIndex = 2;
-            this.btnWebCam_Capture.Text = "CAPTURE\r\nSNAPSHOTS";
             this.btnWebCam_Capture.UseSelectable = true;
             // 
             // btnImageRecognition
             // 
-            this.btnImageRecognition.AutoSize = true;
+            resources.ApplyResources(this.btnImageRecognition, "btnImageRecognition");
             this.btnImageRecognition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImageRecognition.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnImageRecognition.Location = new System.Drawing.Point(301, 276);
             this.btnImageRecognition.Name = "btnImageRecognition";
-            this.btnImageRecognition.Size = new System.Drawing.Size(217, 60);
-            this.btnImageRecognition.TabIndex = 3;
-            this.btnImageRecognition.Text = "IMAGE RECOGNITION\r\n(Offline Version)";
             this.btnImageRecognition.UseSelectable = true;
             // 
             // cmbBoxLanguage
             // 
+            resources.ApplyResources(this.cmbBoxLanguage, "cmbBoxLanguage");
             this.cmbBoxLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbBoxLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbBoxLanguage.FormattingEnabled = true;
-            this.cmbBoxLanguage.ItemHeight = 23;
             this.cmbBoxLanguage.Items.AddRange(new object[] {
-            "English",
-            "Português"});
-            this.cmbBoxLanguage.Location = new System.Drawing.Point(301, 63);
+            resources.GetString("cmbBoxLanguage.Items"),
+            resources.GetString("cmbBoxLanguage.Items1")});
             this.cmbBoxLanguage.Name = "cmbBoxLanguage";
-            this.cmbBoxLanguage.Size = new System.Drawing.Size(180, 29);
-            this.cmbBoxLanguage.TabIndex = 4;
             this.cmbBoxLanguage.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cmbBoxLanguage.UseSelectable = true;
             this.cmbBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbBoxLanguage_SelectedIndexChanged);
             // 
             // lblLanguage
             // 
-            this.lblLanguage.AutoSize = true;
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
             this.lblLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.lblLanguage.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblLanguage.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblLanguage.ForeColor = System.Drawing.Color.White;
-            this.lblLanguage.Location = new System.Drawing.Point(301, 35);
             this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(160, 25);
             this.lblLanguage.Style = MetroFramework.MetroColorStyle.Black;
-            this.lblLanguage.TabIndex = 5;
-            this.lblLanguage.Text = "Idioma (Language)";
             this.lblLanguage.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // TestRig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(541, 376);
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.Controls.Add(this.lblLanguage);
             this.Controls.Add(this.cmbBoxLanguage);
             this.Controls.Add(this.btnImageRecognition);
@@ -133,8 +107,8 @@
             this.Controls.Add(this.btnIR);
             this.Controls.Add(this.btnDAQ);
             this.Name = "TestRig";
-            this.Text = "TESTING RIG";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace TESTRIG_WX3_AMPLA_V0_1
 {
@@ -17,29 +20,27 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         /// LANGUAGE SELECTION
         /// </summary>
         #region ENGLISH LANGUAGE
-        private void lang_Eng()
+        public void lang_Eng()
         {
             btnDAQ.Text = "D.A.Q TEST";
             btnIR.Text = "IRRADIANCE TEST";
             btnWebCam_Capture.Text = " CAPTURE \n SNAPSHOTS";
             btnImageRecognition.Text = "IMAGE RECOGNITION \n(Offline Version)";
-            return;
         }
         #endregion
 
         #region PORTUGUESE LANGUAGE
-        private void lang_Portuguese()
+        public void lang_Portuguese()
         {
             btnDAQ.Text = "TESTE DE \nD.A.Q";
             btnIR.Text = "TEST DE \nIRRADIÂNCIA";
             btnWebCam_Capture.Text = "CAPTURAR \nIMAGEM";
             btnImageRecognition.Text = "RECONHECIMENTO DE\nIMAGEM (Versão Offline)";
-            return;
         }
         #endregion
 
         #region LANGUAGE SELECTION COMBO BOX
-        private void cmbBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        public void cmbBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Cases for Combo box Selection
             switch (cmbBoxLanguage.SelectedIndex)
@@ -60,17 +61,40 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         /// <param name="sender"></param>
         /// <param name="e"></param>
         #region DAQ BUTTON IMPLEMENTATION
+        DAQ GetDAQ;
         private void btnDAQ_Click(object sender, EventArgs e)
         {
-            DAQ daqfrm = new DAQ();
-            daqfrm.Show();
+            if (GetDAQ == null)
+            {
+                GetDAQ = new DAQ();
+                GetDAQ.FormClosed += new FormClosedEventHandler(GetDAQ_FormClosed);
+                GetDAQ.Show();
+            }
+            else
+            {
+                GetDAQ.Activate(); // Avoids opening of Multiple Instances of DAQ Window
+                switch(cmbBoxLanguage.SelectedIndex)
+                {
+                case 0:
+                        MessageBox.Show("The 'D.A.Q TEST' window is already open.");
+                        break;
+                case 1:
+                        MessageBox.Show("A janela 'D.A.Q TEST' já está aberta.");
+                        break;
+                }
+            }
+        }
+
+        private void GetDAQ_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            GetDAQ = null;
         }
         #endregion
 
         #region IRRADIANCE BUTTON IMPLEMENTATION
-        private void btnIR_Click(object sender, EventArgs e)
+        public void btnIR_Click(object sender, EventArgs e)
         {
-
+         
         }
         #endregion
     }

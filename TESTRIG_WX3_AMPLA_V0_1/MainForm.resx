@@ -117,4 +117,207 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;cmbBoxLanguage.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnIR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 143</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnWebCam_Capture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 276</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TestRig</value>
+  </data>
+  <data name="cmbBoxLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDAQ.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnWebCam_Capture.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnImageRecognition.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnIR.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnImageRecognition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnIR.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="btnWebCam_Capture.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnDAQ.Name" xml:space="preserve">
+    <value>btnDAQ</value>
+  </data>
+  <data name="btnImageRecognition.Text" xml:space="preserve">
+    <value>IMAGE RECOGNITION
+(Offline Version)</value>
+  </data>
+  <data name="btnIR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 60</value>
+  </data>
+  <data name="&gt;&gt;btnImageRecognition.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="btnImageRecognition.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnWebCam_Capture.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
+    <value>lblLanguage</value>
+  </data>
+  <data name="btnIR.Text" xml:space="preserve">
+    <value>IRRADIANCE TEST</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;btnWebCam_Capture.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="btnDAQ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 143</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnImageRecognition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnWebCam_Capture.Name" xml:space="preserve">
+    <value>btnWebCam_Capture</value>
+  </data>
+  <data name="&gt;&gt;btnIR.Name" xml:space="preserve">
+    <value>btnIR</value>
+  </data>
+  <data name="btnIR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnDAQ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 60</value>
+  </data>
+  <data name="btnImageRecognition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 60</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;btnWebCam_Capture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 25</value>
+  </data>
+  <data name="cmbBoxLanguage.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;cmbBoxLanguage.Name" xml:space="preserve">
+    <value>cmbBoxLanguage</value>
+  </data>
+  <data name="&gt;&gt;cmbBoxLanguage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnIR.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnDAQ.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="cmbBoxLanguage.Items1" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="btnImageRecognition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 276</value>
+  </data>
+  <data name="cmbBoxLanguage.Items" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="&gt;&gt;btnImageRecognition.Name" xml:space="preserve">
+    <value>btnImageRecognition</value>
+  </data>
+  <data name="cmbBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 97</value>
+  </data>
+  <data name="cmbBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 29</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TESTING RIG</value>
+  </data>
+  <data name="&gt;&gt;cmbBoxLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnDAQ.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnDAQ.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnWebCam_Capture.Text" xml:space="preserve">
+    <value>CAPTURE
+SNAPSHOTS</value>
+  </data>
+  <data name="cmbBoxLanguage.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btnDAQ.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnWebCam_Capture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 60</value>
+  </data>
+  <data name="btnDAQ.Text" xml:space="preserve">
+    <value>D.A.Q TEST</value>
+  </data>
+  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 69</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>586, 393</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;btnIR.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Idioma (Language)</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en-US</value>
+  </metadata>
 </root>
