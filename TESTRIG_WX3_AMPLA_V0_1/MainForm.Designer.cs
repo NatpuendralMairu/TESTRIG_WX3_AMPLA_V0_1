@@ -43,6 +43,7 @@
             this.btnDAQ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDAQ.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnDAQ.Name = "btnDAQ";
+            this.btnDAQ.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnDAQ.UseSelectable = true;
             this.btnDAQ.Click += new System.EventHandler(this.btnDAQ_Click);
             // 
@@ -52,6 +53,7 @@
             this.btnIR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIR.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnIR.Name = "btnIR";
+            this.btnIR.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnIR.UseSelectable = true;
             this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
@@ -61,6 +63,7 @@
             this.btnWebCam_Capture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWebCam_Capture.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnWebCam_Capture.Name = "btnWebCam_Capture";
+            this.btnWebCam_Capture.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnWebCam_Capture.UseSelectable = true;
             // 
             // btnImageRecognition
@@ -69,6 +72,7 @@
             this.btnImageRecognition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImageRecognition.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnImageRecognition.Name = "btnImageRecognition";
+            this.btnImageRecognition.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnImageRecognition.UseSelectable = true;
             // 
             // cmbBoxLanguage
