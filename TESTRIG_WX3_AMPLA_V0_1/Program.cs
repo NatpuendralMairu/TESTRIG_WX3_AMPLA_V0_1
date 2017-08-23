@@ -16,7 +16,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new TestRig());
         }
     }
 }
