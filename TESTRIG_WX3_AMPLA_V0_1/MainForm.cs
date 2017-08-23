@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TESTRIG_WX3_AMPLA_V0_1
 {
@@ -16,7 +8,15 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         {
             InitializeComponent();
         }
-        // English Language Buttons
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Default Language is Set to "English"
+            cmbBoxLanguage.SelectedIndex = 1;
+        }
+        /// <summary>
+        /// LANGUAGE SELECTION
+        /// </summary>
+        #region ENGLISH LANGUAGE
         private void lang_Eng()
         {
             btnDAQ.Text = "D.A.Q TEST";
@@ -25,7 +25,9 @@ namespace TESTRIG_WX3_AMPLA_V0_1
             btnImageRecognition.Text = "IMAGE RECOGNITION \n(Offline Version)";
             return;
         }
+        #endregion
 
+        #region PORTUGUESE LANGUAGE
         private void lang_Portuguese()
         {
             btnDAQ.Text = "TESTE DE \nD.A.Q";
@@ -34,13 +36,9 @@ namespace TESTRIG_WX3_AMPLA_V0_1
             btnImageRecognition.Text = "RECONHECIMENTO DE\nIMAGEM (Versão Offline)";
             return;
         }
+        #endregion
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // Default Language is Set to "English"
-            cmbBoxLanguage.SelectedIndex = 1;
-        }
-
+        #region LANGUAGE SELECTION COMBO BOX
         private void cmbBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Cases for Combo box Selection
@@ -54,5 +52,26 @@ namespace TESTRIG_WX3_AMPLA_V0_1
                     break;
             }
         }
+        #endregion
+
+        /// <summary>
+        /// BUTTON'S IMPLEMENTATION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region DAQ BUTTON IMPLEMENTATION
+        private void btnDAQ_Click(object sender, EventArgs e)
+        {
+            DAQ daqfrm = new DAQ();
+            daqfrm.Show();
+        }
+        #endregion
+
+        #region IRRADIANCE BUTTON IMPLEMENTATION
+        private void btnIR_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

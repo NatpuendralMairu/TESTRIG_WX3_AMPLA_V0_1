@@ -47,6 +47,7 @@
             this.btnDAQ.TabIndex = 0;
             this.btnDAQ.Text = "D.A.Q TEST";
             this.btnDAQ.UseSelectable = true;
+            this.btnDAQ.Click += new System.EventHandler(this.btnDAQ_Click);
             // 
             // btnIR
             // 
@@ -59,6 +60,7 @@
             this.btnIR.TabIndex = 1;
             this.btnIR.Text = "IRRADIANCE TEST";
             this.btnIR.UseSelectable = true;
+            this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
             // btnWebCam_Capture
             // 
