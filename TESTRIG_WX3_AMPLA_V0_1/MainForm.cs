@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace TESTRIG_WX3_AMPLA_V0_1
@@ -76,25 +74,49 @@ namespace TESTRIG_WX3_AMPLA_V0_1
                 switch(cmbBoxLanguage.SelectedIndex)
                 {
                 case 0:
-                        MessageBox.Show("The 'D.A.Q TEST' window is already open.");
+                        MessageBox.Show("The 'D.A.Q TEST' window is already open!");
                         break;
                 case 1:
-                        MessageBox.Show("A janela 'D.A.Q TEST' já está aberta.");
+                        MessageBox.Show("A janela 'D.A.Q TEST' já está aberta!");
                         break;
                 }
             }
         }
 
-        private void GetDAQ_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        private void GetDAQ_FormClosed(object sender, FormClosedEventArgs e)
         {
             GetDAQ = null;
         }
         #endregion
 
         #region IRRADIANCE BUTTON IMPLEMENTATION
+        IRRADIANCE GetIRRADIANCE;
         public void btnIR_Click(object sender, EventArgs e)
         {
-         
+         if (GetIRRADIANCE == null)
+            {
+                GetIRRADIANCE = new IRRADIANCE();
+                GetIRRADIANCE.FormClosed += new FormClosedEventHandler(GetIRRADIANCE_FormClosed);
+                GetIRRADIANCE.Show();
+            }
+            else
+            {
+                GetIRRADIANCE.Activate();
+                switch (cmbBoxLanguage.SelectedIndex)
+                {
+                    case 0:
+                        MessageBox.Show("The 'IRRADIANCE TEST' window is already open!");
+                        break;
+                    case 1:
+                        MessageBox.Show("A janela 'TESTE DE IRRADIÂNCIA' já está aberta!");
+                        break;
+                }
+            }
+        }
+
+        private void GetIRRADIANCE_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GetIRRADIANCE = null;
         }
         #endregion
     }
