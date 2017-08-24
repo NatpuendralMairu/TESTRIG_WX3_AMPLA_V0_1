@@ -29,153 +29,144 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.tempChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.labelIR = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.labelTemp = new MetroFramework.Controls.MetroLabel();
             this.lblPwr = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.labelPower = new MetroFramework.Controls.MetroLabel();
             this.btnIR_StartStop = new MetroFramework.Controls.MetroButton();
             this.chkIR_FileSave = new MetroFramework.Controls.MetroCheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblTxt = new MetroFramework.Controls.MetroLabel();
             this.lblIR_Timer = new MetroFramework.Controls.MetroLabel();
             this.lblWave = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLogdata = new System.Windows.Forms.TextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // tempChart
             // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
-            chartArea3.AxisX.IsLabelAutoFit = false;
-            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisX.LineColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisX.MajorGrid.Interval = 0D;
-            chartArea3.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Minutes;
-            chartArea3.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea3.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisX2.LineColor = System.Drawing.Color.Orchid;
-            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
-            chartArea3.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea3.AxisY.IsLabelAutoFit = false;
-            chartArea3.AxisY.LabelStyle.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisY.LineColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea3.AxisY2.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea3.AxisY2.InterlacedColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisY2.LineColor = System.Drawing.Color.DarkGray;
-            chartArea3.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea3.BorderColor = System.Drawing.Color.White;
-            chartArea3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea3.Name = "Irradiance_TempChart";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.Transparent;
-            legend3.Font = new System.Drawing.Font("Monospac821 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.ForeColor = System.Drawing.Color.DarkGray;
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(306, 63);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series3.ChartArea = "Irradiance_TempChart";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(630, 404);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "Irradiance_Temp Chart";
+            this.tempChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX.MajorGrid.Interval = 0D;
+            chartArea1.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Minutes;
+            chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX2.LineColor = System.Drawing.Color.Orchid;
+            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY2.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisY2.InterlacedColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY2.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea1.BorderColor = System.Drawing.Color.White;
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "Irradiance_TempChart";
+            this.tempChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Font = new System.Drawing.Font("Monospac821 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.ForeColor = System.Drawing.Color.DarkGray;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.tempChart.Legends.Add(legend1);
+            this.tempChart.Location = new System.Drawing.Point(306, 63);
+            this.tempChart.Name = "tempChart";
+            this.tempChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            series1.ChartArea = "Irradiance_TempChart";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.tempChart.Series.Add(series1);
+            this.tempChart.Size = new System.Drawing.Size(630, 404);
+            this.tempChart.TabIndex = 0;
+            this.tempChart.Text = "Irradiance_Temp Chart";
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.Color.DarkGray;
             this.metroLabel1.Location = new System.Drawing.Point(26, 198);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(106, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(161, 19);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Irradiance =";
+            this.metroLabel1.Text = "Irradiance (mW/cm^2) =";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel2
+            // labelIR
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(161, 198);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(44, 25);
-            this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "N/A";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.labelIR.AutoSize = true;
+            this.labelIR.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelIR.Location = new System.Drawing.Point(211, 198);
+            this.labelIR.Name = "labelIR";
+            this.labelIR.Size = new System.Drawing.Size(33, 19);
+            this.labelIR.TabIndex = 2;
+            this.labelIR.Text = "N/A";
+            this.labelIR.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.metroLabel3.Location = new System.Drawing.Point(26, 233);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(129, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(128, 19);
             this.metroLabel3.TabIndex = 3;
-            this.metroLabel3.Text = "Temperature =";
+            this.metroLabel3.Text = "Temperature (ºC) =";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel4
+            // labelTemp
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(161, 233);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(44, 25);
-            this.metroLabel4.TabIndex = 4;
-            this.metroLabel4.Text = "N/A";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.labelTemp.AutoSize = true;
+            this.labelTemp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelTemp.Location = new System.Drawing.Point(211, 233);
+            this.labelTemp.Name = "labelTemp";
+            this.labelTemp.Size = new System.Drawing.Size(33, 19);
+            this.labelTemp.TabIndex = 4;
+            this.labelTemp.Text = "N/A";
+            this.labelTemp.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lblPwr
             // 
             this.lblPwr.AutoSize = true;
-            this.lblPwr.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblPwr.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblPwr.Location = new System.Drawing.Point(26, 162);
             this.lblPwr.Name = "lblPwr";
-            this.lblPwr.Size = new System.Drawing.Size(78, 25);
+            this.lblPwr.Size = new System.Drawing.Size(98, 19);
             this.lblPwr.TabIndex = 5;
-            this.lblPwr.Text = "Power =";
+            this.lblPwr.Text = "Power (mW) =";
             this.lblPwr.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel5
+            // labelPower
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(161, 162);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(44, 25);
-            this.metroLabel5.TabIndex = 6;
-            this.metroLabel5.Text = "N/A";
-            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.labelPower.AutoSize = true;
+            this.labelPower.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelPower.Location = new System.Drawing.Point(211, 162);
+            this.labelPower.Name = "labelPower";
+            this.labelPower.Size = new System.Drawing.Size(33, 19);
+            this.labelPower.TabIndex = 6;
+            this.labelPower.Text = "N/A";
+            this.labelPower.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // btnIR_StartStop
             // 
@@ -205,14 +196,18 @@
             this.chkIR_FileSave.UseSelectable = true;
             this.chkIR_FileSave.CheckedChanged += new System.EventHandler(this.chkIR_FileSave_CheckedChanged);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // lblTxt
             // 
             this.lblTxt.AutoSize = true;
-            this.lblTxt.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblTxt.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblTxt.Location = new System.Drawing.Point(26, 271);
             this.lblTxt.Name = "lblTxt";
-            this.lblTxt.Size = new System.Drawing.Size(73, 25);
+            this.lblTxt.Size = new System.Drawing.Size(57, 19);
             this.lblTxt.TabIndex = 9;
             this.lblTxt.Text = "Timer =";
             this.lblTxt.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -220,11 +215,10 @@
             // lblIR_Timer
             // 
             this.lblIR_Timer.AutoSize = true;
-            this.lblIR_Timer.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblIR_Timer.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblIR_Timer.Location = new System.Drawing.Point(161, 271);
+            this.lblIR_Timer.Location = new System.Drawing.Point(110, 271);
             this.lblIR_Timer.Name = "lblIR_Timer";
-            this.lblIR_Timer.Size = new System.Drawing.Size(44, 25);
+            this.lblIR_Timer.Size = new System.Drawing.Size(33, 19);
             this.lblIR_Timer.TabIndex = 10;
             this.lblIR_Timer.Text = "N/A";
             this.lblIR_Timer.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -241,49 +235,14 @@
             this.lblWave.Text = "Wavelength = 780 nm";
             this.lblWave.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLabel6
+            // txtLogdata
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(211, 162);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(45, 25);
-            this.metroLabel6.TabIndex = 12;
-            this.metroLabel6.Text = "mW";
-            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(211, 198);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(98, 25);
-            this.metroLabel7.TabIndex = 13;
-            this.metroLabel7.Text = "mW/cm^2";
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(211, 233);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(31, 25);
-            this.metroLabel8.TabIndex = 14;
-            this.metroLabel8.Text = "ºC";
-            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 368);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 172);
-            this.textBox1.TabIndex = 15;
+            this.txtLogdata.Location = new System.Drawing.Point(13, 368);
+            this.txtLogdata.Multiline = true;
+            this.txtLogdata.Name = "txtLogdata";
+            this.txtLogdata.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLogdata.Size = new System.Drawing.Size(296, 172);
+            this.txtLogdata.TabIndex = 15;
             // 
             // metroLabel9
             // 
@@ -302,49 +261,43 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 563);
             this.Controls.Add(this.metroLabel9);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.txtLogdata);
             this.Controls.Add(this.lblWave);
             this.Controls.Add(this.lblIR_Timer);
             this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.chkIR_FileSave);
             this.Controls.Add(this.btnIR_StartStop);
-            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.labelPower);
             this.Controls.Add(this.lblPwr);
-            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.labelTemp);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.labelIR);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.tempChart);
             this.Name = "IRRADIANCE";
             this.Text = "IRRADIANCE TEST";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tempChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart tempChart;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel labelIR;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel labelTemp;
         private MetroFramework.Controls.MetroLabel lblPwr;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel labelPower;
         private MetroFramework.Controls.MetroButton btnIR_StartStop;
         private MetroFramework.Controls.MetroCheckBox chkIR_FileSave;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel lblTxt;
         private MetroFramework.Controls.MetroLabel lblIR_Timer;
         private MetroFramework.Controls.MetroLabel lblWave;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLogdata;
         private MetroFramework.Controls.MetroLabel metroLabel9;
     }
 }
