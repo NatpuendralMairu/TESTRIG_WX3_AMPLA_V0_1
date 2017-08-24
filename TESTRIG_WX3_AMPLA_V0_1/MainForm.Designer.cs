@@ -50,8 +50,10 @@
             // btnIR
             // 
             resources.ApplyResources(this.btnIR, "btnIR");
+            this.btnIR.BackColor = System.Drawing.Color.Red;
             this.btnIR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIR.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnIR.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnIR.Name = "btnIR";
             this.btnIR.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnIR.UseSelectable = true;
@@ -110,6 +112,8 @@
             this.Controls.Add(this.btnWebCam_Capture);
             this.Controls.Add(this.btnIR);
             this.Controls.Add(this.btnDAQ);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.HelpButton = true;
             this.Name = "TestRig";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TransparencyKey = System.Drawing.Color.Empty;

@@ -18,7 +18,10 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 
         private void btnDaqStartStop_Click(object sender, EventArgs e)
         {
-            //btnDaqStartStop.Text = "START";
+            //Change the text on the Button to STOP
+            btnDaqStartStop.Text = "STOP";
+            // Deactivate the checkbox functionality
+            chkDAQ_SaveFIle.Enabled = false;
             // Update Website
             MessageBox.Show("LOGIC IS CORRECT");
             // Get the updated Values into the DataGridView
@@ -30,7 +33,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 
         private void chkBxSaveTxt_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBxSaveTxt.Checked == false)
+            if (chkDAQ_SaveFIle.Checked == false)
             {
                 const string message = "Data WILL NOT be logged.\n Are you sure, you want to proceed?";
                 const string caption = "Data Logging";
