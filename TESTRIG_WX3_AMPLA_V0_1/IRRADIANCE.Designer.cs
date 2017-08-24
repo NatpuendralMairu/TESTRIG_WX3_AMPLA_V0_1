@@ -32,7 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tempChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.IRchart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.labelIR = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -47,12 +47,12 @@
             this.lblWave = new MetroFramework.Controls.MetroLabel();
             this.txtLogdata = new System.Windows.Forms.TextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.tempChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IRchart)).BeginInit();
             this.SuspendLayout();
             // 
-            // tempChart
+            // IRchart
             // 
-            this.tempChart.BackColor = System.Drawing.Color.Transparent;
+            this.IRchart.BackColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,24 +80,24 @@
             chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea1.Name = "Irradiance_TempChart";
-            this.tempChart.ChartAreas.Add(chartArea1);
+            this.IRchart.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.Font = new System.Drawing.Font("Monospac821 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             legend1.ForeColor = System.Drawing.Color.DarkGray;
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
-            this.tempChart.Legends.Add(legend1);
-            this.tempChart.Location = new System.Drawing.Point(306, 63);
-            this.tempChart.Name = "tempChart";
-            this.tempChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            this.IRchart.Legends.Add(legend1);
+            this.IRchart.Location = new System.Drawing.Point(306, 63);
+            this.IRchart.Name = "IRchart";
+            this.IRchart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series1.ChartArea = "Irradiance_TempChart";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.tempChart.Series.Add(series1);
-            this.tempChart.Size = new System.Drawing.Size(630, 404);
-            this.tempChart.TabIndex = 0;
-            this.tempChart.Text = "Irradiance_Temp Chart";
+            series1.Name = "IRdata";
+            this.IRchart.Series.Add(series1);
+            this.IRchart.Size = new System.Drawing.Size(630, 404);
+            this.IRchart.TabIndex = 0;
+            this.IRchart.Text = "Irradiance_Temp Chart";
             // 
             // metroLabel1
             // 
@@ -121,6 +121,7 @@
             this.labelIR.TabIndex = 2;
             this.labelIR.Text = "N/A";
             this.labelIR.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.labelIR.TextChanged += new System.EventHandler(this.labelIR_TextChanged);
             // 
             // metroLabel3
             // 
@@ -198,7 +199,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 5000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblTxt
@@ -273,18 +274,19 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.labelIR);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.tempChart);
+            this.Controls.Add(this.IRchart);
             this.Name = "IRRADIANCE";
             this.Text = "IRRADIANCE TEST";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            ((System.ComponentModel.ISupportInitialize)(this.tempChart)).EndInit();
+            this.Load += new System.EventHandler(this.IRRADIANCE_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.IRchart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart tempChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IRchart;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel labelIR;
         private MetroFramework.Controls.MetroLabel metroLabel3;

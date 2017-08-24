@@ -19,8 +19,10 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         double sens_Area = 1.27D;                  // Sensor Area
         double IRValue = 0D;                    // Power/Sensor Area
         double power = 0D;
+        double irdata = 0D;
         //double tempValue = 0D;
         double wavelength = 780;
+        kayChart IRdataChart;
         #endregion
 
         public IRRADIANCE()
@@ -68,7 +70,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         #region START/STOP BUTTON IMPLEMENTATION
         private void btnIR_StartStop_Click(object sender, EventArgs e)
         {
-            pm100d = new Thorlabs.PM100D.PM100D("USB0::0x1313::0x8075::P5000256::INSTR", true, true);  //  For valid Ressource_Name see NI-Visa documentation.
+            pm100d = new PM100D("USB0::0x1313::0x8075::P5000256::INSTR", true, true);  //  For valid Ressource_Name see NI-Visa documentation.
             if (btnIR_StartStop.Text == "S.T.O.P")
             {
                 btnIR_StartStop.Text = "S.T.A.R.T";
@@ -91,12 +93,19 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 
             pm100d.measPower(out powerValue);           // Output the Power in Format: 'double'
             power = powerValue * factor;
-            labelPower.Text = power.ToString();    // Convert the double to string
+            labelPower.Text = power.ToString();         // Convert the double to string
 
             if (sens_Area > 0)
             {
                 IRValue = power * sens_Area;
-                labelIR.Text = IRValue.ToString();
+                labelIR.Text = IRValue.ToString();      
+               
+                string recvData = labelIR.Text;         // Graphing Arrangement Starts here
+                bool result = Double.TryParse(recvData, out irdata);
+                if (result)
+                {
+                    IRdataChart.TriggeredUpdate(irdata);
+                }
             }
             else
             {
@@ -108,12 +117,9 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 
             strdata.Add(lblIR_Timer.Text);  // [0]
             strdata.Add(labelPower.Text);   // [1]
-            strdata.Add(labelIR.Text);  // [2]
+            strdata.Add(labelIR.Text);      // [2]
 
             txtLogdata.Text += strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\r\n";
-
-            // Update Chart
-            GraphTemp();
 
             if (chkIR_FileSave.Checked)
             {
@@ -129,22 +135,15 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         }
         #endregion
 
-        public void GraphTemp()
+        private void IRRADIANCE_Load(object sender, EventArgs e)
         {
-            kayChart tempData = new kayChart(tempChart, 120);
-            //tempData.serieName = "TEMPERATURE";
-
-            Task.Factory.StartNew(() =>
-            {
-                tempData.updateChart(updatePower,5000);
-            }
-            );
+            IRdataChart = new kayChart(IRchart, 120);
+            IRdataChart.serieName = "IRdata";
         }
 
-        private double updatePower()
+        private void labelIR_TextChanged(object sender, EventArgs e)
         {
-            double POWER = double.Parse(labelIR.Text);
-            return POWER;
+            txtLogdata.ScrollToCaret();
         }
     }
 }
