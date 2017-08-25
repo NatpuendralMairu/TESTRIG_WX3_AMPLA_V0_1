@@ -110,7 +110,7 @@
             this.ChrtTemp.Legends.Add(legend1);
             this.ChrtTemp.Location = new System.Drawing.Point(331, 74);
             this.ChrtTemp.Name = "ChrtTemp";
-            this.ChrtTemp.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            this.ChrtTemp.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.ChrtTemp.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Yellow};
             series1.ChartArea = "ChartArea1";

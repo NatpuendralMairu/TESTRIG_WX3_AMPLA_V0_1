@@ -45,7 +45,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 
         private void DAQ_Load(object sender, EventArgs e)
         {
-            // Update the Graph every time, when a new value is available in the box 
+            // Update the Graph every time, when a new value is available in the labels 
             PlotGraph();
         }
 

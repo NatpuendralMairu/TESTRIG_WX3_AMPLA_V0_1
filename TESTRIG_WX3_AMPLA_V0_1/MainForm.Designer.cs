@@ -67,6 +67,7 @@
             this.btnWebCam_Capture.Name = "btnWebCam_Capture";
             this.btnWebCam_Capture.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnWebCam_Capture.UseSelectable = true;
+            this.btnWebCam_Capture.Click += new System.EventHandler(this.btnWebCam_Capture_Click);
             // 
             // btnImageRecognition
             // 

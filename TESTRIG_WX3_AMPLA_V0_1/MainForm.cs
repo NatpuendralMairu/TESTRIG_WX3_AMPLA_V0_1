@@ -5,7 +5,12 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 {
     public partial class TestRig : MetroFramework.Forms.MetroForm
     {
+        #region INSTANCES OF THE CHILD WINDOWS (NOT USING MDI)
         IRRADIANCE GetIRRADIANCE;
+        DAQ GetDAQ;
+        WEBCAM GetWEBCAM;
+        #endregion
+
         public TestRig()
         {
             InitializeComponent();
@@ -60,7 +65,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         /// <param name="sender"></param>
         /// <param name="e"></param>
         #region DAQ BUTTON IMPLEMENTATION
-        DAQ GetDAQ;
+        
         private void btnDAQ_Click(object sender, EventArgs e)
         {
             if (GetDAQ == null)
@@ -93,7 +98,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         #region IRRADIANCE BUTTON IMPLEMENTATION
         public void btnIR_Click(object sender, EventArgs e)
         {
-         if (GetIRRADIANCE == null)
+            if (GetIRRADIANCE == null)
             {
                 GetIRRADIANCE = new IRRADIANCE();
                 GetIRRADIANCE.FormClosed += new FormClosedEventHandler(GetIRRADIANCE_FormClosed);
@@ -117,6 +122,36 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         private void GetIRRADIANCE_FormClosed(object sender, FormClosedEventArgs e)
         {
             GetIRRADIANCE = null;
+        }
+        #endregion
+
+        #region CAPTURE SNAPSHOTS IMPLEMENTATION
+        private void btnWebCam_Capture_Click(object sender, EventArgs e)
+        {
+            if (GetWEBCAM == null)
+            {
+                GetWEBCAM = new WEBCAM();
+                GetWEBCAM.FormClosed += new FormClosedEventHandler(GetWEBCAM_FormClosed);
+                GetWEBCAM.Show();
+            }
+            else
+            {
+                GetWEBCAM.Activate();
+                switch (cmbBoxLanguage.SelectedIndex)
+                {
+                    case 0:
+                        MessageBox.Show("The 'CAPTURE SNAPSHOTS' window is already open!");
+                        break;
+                    case 1:
+                        MessageBox.Show("A janela 'CATURAR IMAGENS' já está aberta!");
+                        break;
+                }
+            }
+        }
+        
+        private void GetWEBCAM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GetWEBCAM = null;
         }
         #endregion
     }
