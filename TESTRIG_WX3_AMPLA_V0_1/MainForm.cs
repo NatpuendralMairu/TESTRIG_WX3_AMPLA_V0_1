@@ -5,6 +5,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
 {
     public partial class TestRig : MetroFramework.Forms.MetroForm
     {
+        IRRADIANCE GetIRRADIANCE;
         public TestRig()
         {
             InitializeComponent();
@@ -90,7 +91,6 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         #endregion
 
         #region IRRADIANCE BUTTON IMPLEMENTATION
-        IRRADIANCE GetIRRADIANCE;
         public void btnIR_Click(object sender, EventArgs e)
         {
          if (GetIRRADIANCE == null)
@@ -113,7 +113,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
                 }
             }
         }
-
+        
         private void GetIRRADIANCE_FormClosed(object sender, FormClosedEventArgs e)
         {
             GetIRRADIANCE = null;

@@ -2,7 +2,6 @@
 using rtChart;
 using System.IO;
 using System.Windows.Forms;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Thorlabs.PM100D;
@@ -12,12 +11,12 @@ namespace TESTRIG_WX3_AMPLA_V0_1
     public partial class IRRADIANCE : MetroFramework.Forms.MetroForm
     {
         #region LOCAL VARIABLES
-        private Thorlabs.PM100D.PM100D pm100d;
+        private PM100D pm100d;
         static Timer myTimer = new Timer();
         double factor = 1000D;
-        double powerValue = 0D;                 // Power
-        double sens_Area = 1.27D;                  // Sensor Area
-        double IRValue = 0D;                    // Power/Sensor Area
+        double powerValue = 0D;               // Power
+        double sens_Area = 1.27D;             // Sensor Area
+        double IRValue = 0D;                  // Power/Sensor Area
         double power = 0D;
         double irdata = 0D;
         //double tempValue = 0D;
@@ -28,10 +27,11 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         public IRRADIANCE()
         {
             InitializeComponent();
+
             // Initializing the Device PM 400 with Address: 'USB0::0x1313::0x8075::P5000256::INSTR'
             try
             {
-                pm100d = new PM100D("USB0::0x1313::0x8075::P5000256::INSTR", true, true);  //  For valid Ressource_Name see NI-Visa documentation.
+                pm100d = new PM100D("USB0::0x1313::0x8075::P5000256::INSTR", true, false);  //  For valid Ressource_Name see NI-Visa documentation.
 
             }
 
@@ -67,20 +67,25 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         }
         #endregion
 
-        #region START/STOP BUTTON IMPLEMENTATION
-        private void btnIR_StartStop_Click(object sender, EventArgs e)
+        #region START BUTTON IMPLEMENTATION
+        private void btnIR_Start_Click(object sender, EventArgs e)
         {
-            pm100d = new PM100D("USB0::0x1313::0x8075::P5000256::INSTR", true, true);  //  For valid Ressource_Name see NI-Visa documentation.
-            if (btnIR_StartStop.Text == "S.T.O.P")
-            {
-                btnIR_StartStop.Text = "S.T.A.R.T";
-                timer1.Enabled = false;
-            }
-            else
-            {
-                btnIR_StartStop.Text = "S.T.O.P";
-                timer1.Enabled = true;
-            }
+            pm100d = new PM100D("USB0::0x1313::0x8075::P5000256::INSTR",true, false);  //  For valid Ressource_Name see NI-Visa documentation.
+            timer1.Enabled = true;
+            btnIR_Start.Enabled = false;
+            btnIR_Stop.Enabled = true;
+        }
+        #endregion
+
+        #region STOP BUTTON IMPLEMENTATION
+        private void btnIR_Stop_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;                             // Disable Timer to stop capture
+            btnIR_Start.Enabled = true;                         // Enable Start button
+            btnIR_Stop.Enabled = false;                         // Disable the Stop button
+            if (pm100d != null)
+                pm100d.Dispose();                               // Free the memory 
+            this.Close();                                       // Close the Window
         }
         #endregion
 
@@ -91,16 +96,16 @@ namespace TESTRIG_WX3_AMPLA_V0_1
             lblIR_Timer.Text = DateTime.Now.ToString();
             List<string> strdata = new List<string>();
 
-            pm100d.measPower(out powerValue);           // Output the Power in Format: 'double'
-            power = powerValue * factor;
-            labelPower.Text = power.ToString();         // Convert the double to string
+            pm100d.measPower(out powerValue);                           // Output the Power in Format: 'double'
+            power = powerValue * factor;                                // Multiply the power with a factor of 1000 to convert to mW
+            labelPower.Text = power.ToString();                         // Convert the double to string
 
             if (sens_Area > 0)
             {
                 IRValue = power * sens_Area;
                 labelIR.Text = IRValue.ToString();      
                
-                string recvData = labelIR.Text;         // Graphing Arrangement Starts here
+                string recvData = labelIR.Text;                         // Graphing Arrangement Starts here
                 bool result = Double.TryParse(recvData, out irdata);
                 if (result)
                 {
@@ -112,20 +117,20 @@ namespace TESTRIG_WX3_AMPLA_V0_1
                 string ex = "Area Cannot be Zero";
                 MessageBox.Show(ex);
             }
-            //pm100d.measEmmTemperature(out tempValue);   // Output the Temperature in Format: 'double'
-            //labelTemp.Text = tempValue.ToString();      // Convert the double to string
+            //pm100d.measEmmTemperature(out tempValue);     // Output the Temperature in Format: 'double'
+            //labelTemp.Text = tempValue.ToString();        // Convert the double to string
 
-            strdata.Add(lblIR_Timer.Text);  // [0]
-            strdata.Add(labelPower.Text);   // [1]
-            strdata.Add(labelIR.Text);      // [2]
+            strdata.Add(lblIR_Timer.Text);                  // [0] - Timer
+            strdata.Add(labelPower.Text);                   // [1] - Power
+            strdata.Add(labelIR.Text);                      // [2] - Irradiance
 
-            txtLogdata.Text += strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\r\n";
+            txtLogdata.Text += strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\r\n";    // Format of Display in the Text Box
 
             if (chkIR_FileSave.Checked)
             {
                 using (StreamWriter file = new StreamWriter(@"C:\Users\prajwal.nimmagadda\Desktop\Automation GitHub\Thorlabs_Data_Log\Power.txt", true))
                 {
-                    file.WriteLine(strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\n");
+                    file.WriteLine(strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\n"); 
                 }
             }
             else

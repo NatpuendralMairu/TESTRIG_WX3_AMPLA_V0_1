@@ -39,7 +39,7 @@
             this.labelTemp = new MetroFramework.Controls.MetroLabel();
             this.lblPwr = new MetroFramework.Controls.MetroLabel();
             this.labelPower = new MetroFramework.Controls.MetroLabel();
-            this.btnIR_StartStop = new MetroFramework.Controls.MetroButton();
+            this.btnIR_Start = new MetroFramework.Controls.MetroButton();
             this.chkIR_FileSave = new MetroFramework.Controls.MetroCheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblTxt = new MetroFramework.Controls.MetroLabel();
@@ -47,6 +47,7 @@
             this.lblWave = new MetroFramework.Controls.MetroLabel();
             this.txtLogdata = new System.Windows.Forms.TextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.btnIR_Stop = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.IRchart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.IRchart.Legends.Add(legend1);
-            this.IRchart.Location = new System.Drawing.Point(306, 63);
+            this.IRchart.Location = new System.Drawing.Point(321, 63);
             this.IRchart.Name = "IRchart";
             this.IRchart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series1.ChartArea = "Irradiance_TempChart";
@@ -95,7 +96,7 @@
             series1.Legend = "Legend1";
             series1.Name = "IRdata";
             this.IRchart.Series.Add(series1);
-            this.IRchart.Size = new System.Drawing.Size(630, 404);
+            this.IRchart.Size = new System.Drawing.Size(840, 445);
             this.IRchart.TabIndex = 0;
             this.IRchart.Text = "Irradiance_Temp Chart";
             // 
@@ -169,18 +170,18 @@
             this.labelPower.Text = "N/A";
             this.labelPower.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // btnIR_StartStop
+            // btnIR_Start
             // 
-            this.btnIR_StartStop.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnIR_StartStop.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnIR_StartStop.Location = new System.Drawing.Point(658, 486);
-            this.btnIR_StartStop.Name = "btnIR_StartStop";
-            this.btnIR_StartStop.Size = new System.Drawing.Size(278, 54);
-            this.btnIR_StartStop.TabIndex = 7;
-            this.btnIR_StartStop.Text = "S.T.A.R.T";
-            this.btnIR_StartStop.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnIR_StartStop.UseSelectable = true;
-            this.btnIR_StartStop.Click += new System.EventHandler(this.btnIR_StartStop_Click);
+            this.btnIR_Start.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnIR_Start.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnIR_Start.Location = new System.Drawing.Point(856, 533);
+            this.btnIR_Start.Name = "btnIR_Start";
+            this.btnIR_Start.Size = new System.Drawing.Size(147, 54);
+            this.btnIR_Start.TabIndex = 7;
+            this.btnIR_Start.Text = "S.T.A.R.T";
+            this.btnIR_Start.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnIR_Start.UseSelectable = true;
+            this.btnIR_Start.Click += new System.EventHandler(this.btnIR_Start_Click);
             // 
             // chkIR_FileSave
             // 
@@ -188,7 +189,7 @@
             this.chkIR_FileSave.Checked = true;
             this.chkIR_FileSave.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIR_FileSave.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkIR_FileSave.Location = new System.Drawing.Point(509, 500);
+            this.chkIR_FileSave.Location = new System.Drawing.Point(727, 547);
             this.chkIR_FileSave.Name = "chkIR_FileSave";
             this.chkIR_FileSave.Size = new System.Drawing.Size(114, 19);
             this.chkIR_FileSave.TabIndex = 8;
@@ -256,18 +257,32 @@
             this.metroLabel9.Text = "Irradiance Values";
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // btnIR_Stop
+            // 
+            this.btnIR_Stop.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnIR_Stop.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnIR_Stop.Location = new System.Drawing.Point(1014, 533);
+            this.btnIR_Stop.Name = "btnIR_Stop";
+            this.btnIR_Stop.Size = new System.Drawing.Size(147, 54);
+            this.btnIR_Stop.TabIndex = 17;
+            this.btnIR_Stop.Text = "S.T.O.P";
+            this.btnIR_Stop.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnIR_Stop.UseSelectable = true;
+            this.btnIR_Stop.Click += new System.EventHandler(this.btnIR_Stop_Click);
+            // 
             // IRRADIANCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 563);
+            this.ClientSize = new System.Drawing.Size(1195, 610);
+            this.Controls.Add(this.btnIR_Stop);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.txtLogdata);
             this.Controls.Add(this.lblWave);
             this.Controls.Add(this.lblIR_Timer);
             this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.chkIR_FileSave);
-            this.Controls.Add(this.btnIR_StartStop);
+            this.Controls.Add(this.btnIR_Start);
             this.Controls.Add(this.labelPower);
             this.Controls.Add(this.lblPwr);
             this.Controls.Add(this.labelTemp);
@@ -293,7 +308,7 @@
         private MetroFramework.Controls.MetroLabel labelTemp;
         private MetroFramework.Controls.MetroLabel lblPwr;
         private MetroFramework.Controls.MetroLabel labelPower;
-        private MetroFramework.Controls.MetroButton btnIR_StartStop;
+        private MetroFramework.Controls.MetroButton btnIR_Start;
         private MetroFramework.Controls.MetroCheckBox chkIR_FileSave;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel lblTxt;
@@ -301,5 +316,6 @@
         private MetroFramework.Controls.MetroLabel lblWave;
         private System.Windows.Forms.TextBox txtLogdata;
         private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroButton btnIR_Stop;
     }
 }

@@ -29,22 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClmnChkBx = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmnSensor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChrtTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnDaqStartStop = new MetroFramework.Controls.MetroButton();
+            this.btnDaqStart = new MetroFramework.Controls.MetroButton();
             this.chkDAQ_SaveFIle = new MetroFramework.Controls.MetroCheckBox();
             this.lblDaqTimer = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.btnDaqStop = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChrtTemp)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // dataGridView1
             // 
@@ -86,58 +91,58 @@
             // 
             this.ChrtTemp.BackColor = System.Drawing.Color.Transparent;
             this.ChrtTemp.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
-            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Gray;
-            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Gray;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.DarkGray;
-            chartArea1.BorderColor = System.Drawing.Color.White;
-            chartArea1.BorderWidth = 2;
-            chartArea1.CursorX.LineColor = System.Drawing.Color.White;
-            chartArea1.IsSameFontSizeForAllAxes = true;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
-            this.ChrtTemp.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            legend1.BorderColor = System.Drawing.Color.LightSlateGray;
-            legend1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.ForeColor = System.Drawing.Color.DarkGray;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            this.ChrtTemp.Legends.Add(legend1);
+            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea3.AxisX.InterlacedColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Silver;
+            chartArea3.AxisX.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea3.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Silver;
+            chartArea3.AxisY.LineColor = System.Drawing.Color.Gray;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea3.BackSecondaryColor = System.Drawing.Color.DarkGray;
+            chartArea3.BorderColor = System.Drawing.Color.White;
+            chartArea3.BorderWidth = 2;
+            chartArea3.CursorX.LineColor = System.Drawing.Color.White;
+            chartArea3.IsSameFontSizeForAllAxes = true;
+            chartArea3.Name = "ChartArea1";
+            chartArea3.ShadowColor = System.Drawing.Color.Transparent;
+            this.ChrtTemp.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.BackSecondaryColor = System.Drawing.Color.Transparent;
+            legend3.BorderColor = System.Drawing.Color.LightSlateGray;
+            legend3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.ForeColor = System.Drawing.Color.DarkGray;
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            this.ChrtTemp.Legends.Add(legend3);
             this.ChrtTemp.Location = new System.Drawing.Point(331, 74);
             this.ChrtTemp.Name = "ChrtTemp";
             this.ChrtTemp.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             this.ChrtTemp.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Yellow};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "chrtTemperature";
-            this.ChrtTemp.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Temperature";
+            this.ChrtTemp.Series.Add(series3);
             this.ChrtTemp.Size = new System.Drawing.Size(840, 445);
             this.ChrtTemp.TabIndex = 1;
             this.ChrtTemp.Text = "Temperature Plot";
             // 
-            // btnDaqStartStop
+            // btnDaqStart
             // 
-            this.btnDaqStartStop.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnDaqStartStop.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnDaqStartStop.Location = new System.Drawing.Point(891, 525);
-            this.btnDaqStartStop.Name = "btnDaqStartStop";
-            this.btnDaqStartStop.Size = new System.Drawing.Size(280, 70);
-            this.btnDaqStartStop.TabIndex = 2;
-            this.btnDaqStartStop.Text = "S.T.A.R.T";
-            this.btnDaqStartStop.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnDaqStartStop.UseSelectable = true;
-            this.btnDaqStartStop.Click += new System.EventHandler(this.btnDaqStartStop_Click);
+            this.btnDaqStart.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnDaqStart.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDaqStart.Location = new System.Drawing.Point(891, 536);
+            this.btnDaqStart.Name = "btnDaqStart";
+            this.btnDaqStart.Size = new System.Drawing.Size(131, 62);
+            this.btnDaqStart.TabIndex = 2;
+            this.btnDaqStart.Text = "S.T.A.R.T";
+            this.btnDaqStart.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnDaqStart.UseSelectable = true;
+            this.btnDaqStart.Click += new System.EventHandler(this.btnDaqStart_Click);
             // 
             // chkDAQ_SaveFIle
             // 
@@ -160,12 +165,12 @@
             this.lblDaqTimer.Cursor = System.Windows.Forms.Cursors.No;
             this.lblDaqTimer.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblDaqTimer.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblDaqTimer.Location = new System.Drawing.Point(407, 522);
+            this.lblDaqTimer.Location = new System.Drawing.Point(357, 526);
             this.lblDaqTimer.Name = "lblDaqTimer";
             this.lblDaqTimer.Size = new System.Drawing.Size(56, 25);
             this.lblDaqTimer.TabIndex = 4;
             this.lblDaqTimer.Text = "Timer";
-            this.lblDaqTimer.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lblDaqTimer.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel2
             // 
@@ -173,12 +178,25 @@
             this.metroLabel2.Cursor = System.Windows.Forms.Cursors.No;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(469, 522);
+            this.metroLabel2.Location = new System.Drawing.Point(419, 526);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(56, 25);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "00:00";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // btnDaqStop
+            // 
+            this.btnDaqStop.Enabled = false;
+            this.btnDaqStop.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnDaqStop.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDaqStop.Location = new System.Drawing.Point(1040, 536);
+            this.btnDaqStop.Name = "btnDaqStop";
+            this.btnDaqStop.Size = new System.Drawing.Size(131, 62);
+            this.btnDaqStop.TabIndex = 6;
+            this.btnDaqStop.Text = "S.T.O.P";
+            this.btnDaqStop.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnDaqStop.UseSelectable = true;
             // 
             // DAQ
             // 
@@ -186,11 +204,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1193, 610);
+            this.ClientSize = new System.Drawing.Size(1195, 610);
+            this.Controls.Add(this.btnDaqStop);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.lblDaqTimer);
             this.Controls.Add(this.chkDAQ_SaveFIle);
-            this.Controls.Add(this.btnDaqStartStop);
+            this.Controls.Add(this.btnDaqStart);
             this.Controls.Add(this.ChrtTemp);
             this.Controls.Add(this.dataGridView1);
             this.Name = "DAQ";
@@ -213,9 +232,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnSensor;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTemperature;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChrtTemp;
-        private MetroFramework.Controls.MetroButton btnDaqStartStop;
+        private MetroFramework.Controls.MetroButton btnDaqStart;
         private MetroFramework.Controls.MetroCheckBox chkDAQ_SaveFIle;
         private MetroFramework.Controls.MetroLabel lblDaqTimer;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroButton btnDaqStop;
     }
 }
