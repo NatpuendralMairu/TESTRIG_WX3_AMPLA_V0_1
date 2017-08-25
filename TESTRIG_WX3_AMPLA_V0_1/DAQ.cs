@@ -11,10 +11,29 @@ namespace TESTRIG_WX3_AMPLA_V0_1
     public partial class DAQ : MetroFramework.Forms.MetroForm
     {
         #region LOCAL VARIABLES
-        kayChart TempChart;
+        kayChart TempChart1;
+        kayChart TempChart2;
+        kayChart TempChart3;
+        kayChart TempChart4;
+        kayChart TempChart5;
+        kayChart TempChart6;
+        kayChart TempChart7;
+        kayChart TempChart8;
+        kayChart TempChart9;
+        kayChart TempChart10;
         TestRig testrig = new TestRig();
         string html = "http://10.1.4.252/cgi-bin/ope/allch.cgi";    // Place where DAQ data is updated to
         HtmlWeb daqWeb = new HtmlWeb();
+        double tempGraph1   = 0D;
+        double tempGraph2   = 0D;
+        double tempGraph3   = 0D;
+        double tempGraph4   = 0D;
+        double tempGraph5   = 0D;
+        double tempGraph6   = 0D;
+        double tempGraph7   = 0D;
+        double tempGraph8   = 0D;
+        double tempGraph9   = 0D;
+        double tempGraph10  = 0D;
 
         List<string> tempData = new List<string>();                 // Temperature Data Array
         #endregion
@@ -27,8 +46,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         private void DAQ_Load(object sender, EventArgs e)
         {
             // Update the Graph every time, when a new value is available in the box 
-            TempChart = new kayChart(ChrtTemp, 120);
-            TempChart.serieName = "Temperature";
+            PlotGraph();
         }
 
         #region START BUTTON IMPLEMENTATION
@@ -95,7 +113,8 @@ namespace TESTRIG_WX3_AMPLA_V0_1
             // Get the updated Values into the labels
             tempGetClean();
 
-
+            // Plot Graph realtime
+            GraphTemps();
 
             // Saving to File
             //if (chkDAQ_SaveFIle.Checked)
@@ -112,7 +131,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         }
         #endregion
         
-        #region GET CLEAN SPLIT THE TABLE DATA FROM WEBSITE INTO LABELS
+        #region GET, CLEAN, SPLIT THE TABLE DATA FROM WEBSITE INTO LABELS
         private void tempGetClean()
         {
             var htmlDoc = daqWeb.Load(html);
@@ -159,6 +178,116 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         {
             value = Regex.Replace(value, @"\s+", " ");
             return value;
+        }
+        #endregion
+
+        #region GRAPHING FUNCTION
+        private void GraphTemps()
+        {
+            string temp1 = lblTemp1.Text;
+            string temp2 = lblTemp2.Text;
+            string temp3 = lblTemp3.Text;
+            string temp4 = lblTemp4.Text;
+            string temp5 = lblTemp5.Text;
+            string temp6 = lblTemp6.Text;
+            string temp7 = lblTemp7.Text;
+            string temp8 = lblTemp8.Text;
+            string temp9 = lblTemp9.Text;
+            string temp10 = lblTemp10.Text;
+
+            bool result1 = Double.TryParse(temp1, out tempGraph1);
+            if (result1)
+            {
+                TempChart1.TriggeredUpdate(tempGraph1);
+            }
+
+            bool result2 = Double.TryParse(temp2, out tempGraph2);
+            if (result2)
+            {
+                TempChart2.TriggeredUpdate(tempGraph2);
+            }
+
+            bool result3 = Double.TryParse(temp3, out tempGraph3);
+            if (result3)
+            {
+                TempChart3.TriggeredUpdate(tempGraph3);
+            }
+
+            bool result4 = Double.TryParse(temp4, out tempGraph4);
+            if (result4)
+            {
+                TempChart4.TriggeredUpdate(tempGraph4);
+            }
+
+            bool result5 = Double.TryParse(temp5, out tempGraph5);
+            if (result5)
+            {
+                TempChart5.TriggeredUpdate(tempGraph5);
+            }
+
+            bool result6 = Double.TryParse(temp6, out tempGraph6);
+            if (result6)
+            {
+                TempChart6.TriggeredUpdate(tempGraph6);
+            }
+            bool result7 = Double.TryParse(temp7, out tempGraph7);
+            if (result7)
+            {
+                TempChart7.TriggeredUpdate(tempGraph7);
+            }
+
+            bool result8 = Double.TryParse(temp8, out tempGraph8);
+            if (result8)
+            {
+                TempChart8.TriggeredUpdate(tempGraph8);
+            }
+
+            bool result9 = Double.TryParse(temp9, out tempGraph9);
+            if (result9)
+            {
+                TempChart9.TriggeredUpdate(tempGraph9);
+            }
+
+            bool result10 = Double.TryParse(temp10, out tempGraph10);
+            if (result10)
+            {
+                TempChart10.TriggeredUpdate(tempGraph10);
+            }
+        }
+        #endregion
+
+        #region UPDATE GRAPH
+        private void PlotGraph()
+        {
+            TempChart1 = new kayChart(ChrtTemp, 120);
+            TempChart1.serieName = "Temperature1";
+
+            TempChart2 = new kayChart(ChrtTemp, 120);
+            TempChart2.serieName = "Temperature2";
+
+            TempChart3 = new kayChart(ChrtTemp, 120);
+            TempChart3.serieName = "Temperature3";
+
+            TempChart4 = new kayChart(ChrtTemp, 120);
+            TempChart4.serieName = "Temperature4";
+
+            TempChart5 = new kayChart(ChrtTemp, 120);
+            TempChart5.serieName = "Temperature5";
+
+            TempChart6 = new kayChart(ChrtTemp, 120);
+            TempChart6.serieName = "Temperature6";
+
+            TempChart7 = new kayChart(ChrtTemp, 120);
+            TempChart7.serieName = "Temperature7";
+
+            TempChart8 = new kayChart(ChrtTemp, 120);
+            TempChart8.serieName = "Temperature8";
+
+            TempChart9 = new kayChart(ChrtTemp, 120);
+            TempChart9.serieName = "Temperature9";
+
+            TempChart10 = new kayChart(ChrtTemp, 120);
+            TempChart10.serieName = "Temperature10";
         }
         #endregion
     }
