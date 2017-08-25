@@ -243,7 +243,7 @@
             this.txtLogdata.Multiline = true;
             this.txtLogdata.Name = "txtLogdata";
             this.txtLogdata.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogdata.Size = new System.Drawing.Size(296, 172);
+            this.txtLogdata.Size = new System.Drawing.Size(302, 219);
             this.txtLogdata.TabIndex = 15;
             // 
             // metroLabel9

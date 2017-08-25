@@ -117,20 +117,17 @@ namespace TESTRIG_WX3_AMPLA_V0_1
                 string ex = "Area Cannot be Zero";
                 MessageBox.Show(ex);
             }
-            //pm100d.measEmmTemperature(out tempValue);     // Output the Temperature in Format: 'double'
-            //labelTemp.Text = tempValue.ToString();        // Convert the double to string
 
-            strdata.Add(lblIR_Timer.Text);                  // [0] - Timer
-            strdata.Add(labelPower.Text);                   // [1] - Power
-            strdata.Add(labelIR.Text);                      // [2] - Irradiance
-
-            txtLogdata.Text += strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\r\n";    // Format of Display in the Text Box
+            strdata.Add(lblIR_Timer.Text);                              // [0] - Timer
+            strdata.Add(labelPower.Text);                               // [1] - Power
+            strdata.Add(labelIR.Text);                                  // [2] - Irradiance
+            txtLogdata.Text += strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] +"\r\n";    // Format of Display in the Text Box
 
             if (chkIR_FileSave.Checked)
             {
                 using (StreamWriter file = new StreamWriter(@"C:\Users\prajwal.nimmagadda\Desktop\Automation GitHub\Thorlabs_Data_Log\Power.txt", true))
                 {
-                    file.WriteLine(strdata[0] + ", P = " + strdata[1] + ", IR = " + strdata[2] + "\n"); 
+                    file.WriteLine(strdata[0]+"," + strdata[2] + "\n"); 
                 }
             }
             else
