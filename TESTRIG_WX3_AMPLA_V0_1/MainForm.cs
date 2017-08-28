@@ -9,6 +9,7 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         IRRADIANCE GetIRRADIANCE;
         DAQ GetDAQ;
         WEBCAM GetWEBCAM;
+        IMGRECOGNITION GetRECOGNIZED;
         #endregion
 
         public TestRig()
@@ -132,7 +133,8 @@ namespace TESTRIG_WX3_AMPLA_V0_1
             {
                 GetWEBCAM = new WEBCAM();
                 GetWEBCAM.FormClosed += new FormClosedEventHandler(GetWEBCAM_FormClosed);
-                GetWEBCAM.Show();
+                //GetWEBCAM.Show();
+                MessageBox.Show("Code needs cleaning!");
             }
             else
             {
@@ -152,6 +154,36 @@ namespace TESTRIG_WX3_AMPLA_V0_1
         private void GetWEBCAM_FormClosed(object sender, FormClosedEventArgs e)
         {
             GetWEBCAM = null;
+        }
+        #endregion
+
+        #region IMAGE RECOGNITION IMPLEMENTATION
+        private void btnImageRecognition_Click(object sender, EventArgs e)
+        {
+            if (GetRECOGNIZED == null)
+            {
+                GetRECOGNIZED = new IMGRECOGNITION();
+                GetRECOGNIZED.FormClosed += new FormClosedEventHandler(GetRECOGNIZED_FormClosed);
+                GetRECOGNIZED.Show();
+            }
+            else
+            {
+                GetRECOGNIZED.Activate();
+                switch (cmbBoxLanguage.SelectedIndex)
+                {
+                    case 0:
+                        MessageBox.Show("The 'IMAGE RECOGNITION' window is already open!");
+                        break;
+                    case 1:
+                        MessageBox.Show("A janela 'RECONHECIMENTO DE IMAGENS' já está aberta!");
+                        break;
+                }
+            }
+        }
+
+        private void GetRECOGNIZED_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GetRECOGNIZED = null;
         }
         #endregion
     }

@@ -77,6 +77,7 @@
             this.btnImageRecognition.Name = "btnImageRecognition";
             this.btnImageRecognition.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnImageRecognition.UseSelectable = true;
+            this.btnImageRecognition.Click += new System.EventHandler(this.btnImageRecognition_Click);
             // 
             // cmbBoxLanguage
             // 
